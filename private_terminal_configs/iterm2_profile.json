@@ -1,0 +1,17 @@
+{
+  "Profiles": [
+    {
+      "Name": "Default",
+      "Normal Font": "MesloLGS NF 12",
+      "Non Ascii Font": "MesloLGS NF 12",
+      "Use Non-ASCII Font": false,
+      "Use Bold Font": true,
+      "Use Bright Bold": true,
+      "Use Italic Font": true,
+      "Character Encoding": 4,
+      "Terminal Type": "xterm-256color",
+      "Option Key Sends": 0,
+      "Right Option Key Sends": 0
+    }
+  ]
+}

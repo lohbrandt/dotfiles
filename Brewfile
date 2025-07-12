@@ -1,3 +1,5 @@
+tap "homebrew/cask-fonts"
+
 brew "git"
 brew "asdf"
 brew "chezmoi"
