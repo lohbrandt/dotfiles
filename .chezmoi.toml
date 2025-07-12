@@ -1,0 +1,11 @@
+[data]
+    name = "Steffen Lohbrandt"
+    email = "lohbrandt@example.com"
+    
+[edit]
+    command = "code"
+    args = ["--wait"]
+    
+[git]
+    autoCommit = true
+    autoPush = false

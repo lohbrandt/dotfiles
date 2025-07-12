@@ -1,0 +1,98 @@
+# ============================================================================
+# ZSH Configuration - Managed by chezmoi
+# ============================================================================
+
+# -----------------------------------------------------------------------------
+# Oh My Zsh Configuration
+# -----------------------------------------------------------------------------
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="robbyrussell"
+
+# Oh My Zsh plugins
+plugins=(
+    git
+    asdf
+    brew
+    macos
+)
+
+# Oh My Zsh settings
+zstyle ':omz:update' mode reminder
+zstyle ':omz:update' frequency 13
+
+# Load Oh My Zsh
+source $ZSH/oh-my-zsh.sh
+
+# -----------------------------------------------------------------------------
+# Development Tools
+# -----------------------------------------------------------------------------
+
+# Initialize asdf (version manager)
+if [[ -f $(brew --prefix asdf)/libexec/asdf.sh ]]; then
+    source $(brew --prefix asdf)/libexec/asdf.sh
+fi
+
+# -----------------------------------------------------------------------------
+# Environment Variables
+# -----------------------------------------------------------------------------
+
+# Preferred editor
+export EDITOR='code'
+export VISUAL='code'
+
+# Language environment
+export LANG=en_US.UTF-8
+
+# Compilation flags
+export ARCHFLAGS="-arch $(uname -m)"
+
+# -----------------------------------------------------------------------------
+# Aliases
+# -----------------------------------------------------------------------------
+
+# Quick config editing
+alias zshconfig="chezmoi edit ~/.zshrc"
+alias zshreload="source ~/.zshrc"
+
+# chezmoi shortcuts
+alias cm="chezmoi"
+alias cma="chezmoi apply"
+alias cmd="chezmoi diff"
+alias cms="chezmoi status"
+alias cme="chezmoi edit"
+
+# Git shortcuts
+alias gs="git status"
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gl="git log --oneline"
+
+# Development shortcuts
+alias ll="ls -la"
+alias la="ls -la"
+alias ..="cd .."
+alias ...="cd ../.."
+
+# -----------------------------------------------------------------------------
+# Functions
+# -----------------------------------------------------------------------------
+
+# Quick directory navigation
+function mkcd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+# Git branch creation and switch
+function gcb() {
+    git checkout -b "$1"
+}
+
+# -----------------------------------------------------------------------------
+# Local Configuration
+# -----------------------------------------------------------------------------
+
+# Load local configuration if it exists
+if [[ -f ~/.zshrc.local ]]; then
+    source ~/.zshrc.local
+fi
