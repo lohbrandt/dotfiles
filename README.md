@@ -139,6 +139,14 @@ The chezmoi configuration is in `.chezmoi.toml` and includes:
 - **Auto-installation**: Scripts to install plugins and versions automatically
 - **Plugin management**: Easy updates and maintenance
 - **Cross-machine sync**: Automatically synced across machines
+- **Ruby exception**: Ruby is managed via Homebrew for better compatibility
+
+### Ruby via Homebrew
+
+- **Installation**: Ruby installed via Homebrew instead of asdf
+- **Path management**: Automatically configured in environment
+- **Gem management**: Proper gem paths and environment setup
+- **Compatibility**: Avoids compilation issues on newer macOS versions
 
 ## Best Practices
 

@@ -151,6 +151,15 @@ alias nd="npm run dev"
 alias nls="npm list"
 alias nout="npm outdated"
 
+# Ruby
+alias rb="ruby"
+alias gem="gem"
+alias bundle="bundle"
+alias bi="bundle install"
+alias be="bundle exec"
+alias rails="rails"
+alias rake="rake"
+
 # -----------------------------------------------------------------------------
 # Miscellaneous
 # -----------------------------------------------------------------------------

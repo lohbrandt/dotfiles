@@ -57,6 +57,10 @@ export GOBIN="$GOPATH/bin"
 export CARGO_HOME="$HOME/.cargo"
 export RUSTUP_HOME="$HOME/.rustup"
 
+# Ruby (Homebrew)
+export RUBY_HOME="$(brew --prefix ruby)"
+export GEM_HOME="$HOME/.gem"
+
 # -----------------------------------------------------------------------------
 # Path Configuration
 # -----------------------------------------------------------------------------
@@ -67,6 +71,9 @@ path_dirs=(
     "$HOME/.local/bin"
     "$GOBIN"
     "$CARGO_HOME/bin"
+    "$RUBY_HOME/bin"
+    "$GEM_HOME/bin"
+    "/opt/homebrew/lib/ruby/gems/3.4.0/bin"
     "/usr/local/bin"
     "/usr/local/sbin"
 )
