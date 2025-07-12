@@ -61,6 +61,19 @@ alias cmd="chezmoi diff"
 alias cms="chezmoi status"
 alias cme="chezmoi edit"
 
+# Homebrew shortcuts
+alias brewup="brew update && brew upgrade && brew cleanup"
+alias brewfile="brew bundle dump --file=\$(chezmoi source-path)/Brewfile --force"
+alias brewinstall="brew bundle --file=\$HOME/Brewfile"
+
+# asdf shortcuts
+alias asdfup="asdf plugin update --all"
+alias asdflist="asdf list"
+alias asdfglobal="asdf global"
+
+# System maintenance
+alias sysmaint="\$(chezmoi source-path)/scripts/maintenance.sh"
+
 # Git shortcuts
 alias gs="git status"
 alias ga="git add"

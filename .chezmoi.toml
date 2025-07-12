@@ -1,6 +1,6 @@
 [data]
     name = "Steffen Lohbrandt"
-    email = "lohbrandt@example.com"
+    email = "lohbrandt@gmail.com"
     
 [edit]
     command = "code"
@@ -9,3 +9,10 @@
 [git]
     autoCommit = true
     autoPush = false
+    
+[hooks.read-source-state.pre]
+    command = "brew"
+    args = ["bundle", "dump", "--file={{ .chezmoi.sourceDir }}/Brewfile", "--force"]
+    
+[interpreters.sh]
+    command = "bash"

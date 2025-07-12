@@ -7,6 +7,8 @@ This repository contains my personal dotfiles managed by [chezmoi](https://www.c
 - `.zshrc` - Zsh configuration with Oh My Zsh
 - `.gitconfig` - Git configuration
 - `.tool-versions` - asdf version manager configuration
+- `Brewfile` - Homebrew package list
+- Setup scripts for automated installation
 
 ## Setup
 
@@ -56,11 +58,25 @@ chezmoi add ~/.newfile
 
 ### Common aliases (available after sourcing .zshrc)
 
+**chezmoi shortcuts:**
 - `cm` - chezmoi
 - `cma` - chezmoi apply
 - `cmd` - chezmoi diff
 - `cms` - chezmoi status
 - `cme` - chezmoi edit
+
+**Homebrew shortcuts:**
+- `brewup` - Update, upgrade, and cleanup Homebrew
+- `brewfile` - Update Brewfile with current packages
+- `brewinstall` - Install packages from Brewfile
+
+**asdf shortcuts:**
+- `asdfup` - Update all asdf plugins
+- `asdflist` - List all installed versions
+- `asdfglobal` - Show global versions
+
+**System maintenance:**
+- `sysmaint` - Run comprehensive system maintenance
 
 ## Configuration
 
@@ -86,10 +102,19 @@ The chezmoi configuration is in `.chezmoi.toml` and includes:
 - Your personal git settings
 - Managed through chezmoi templates
 
-### Tool Versions
+### Homebrew Integration
 
-- asdf .tool-versions file for consistent development environments
-- Automatically synced across machines
+- **Brewfile**: Automatically managed list of installed packages
+- **Auto-update**: Brewfile updates automatically when chezmoi status is checked
+- **Installation scripts**: Automated setup for new machines
+- **Maintenance**: Built-in scripts for system maintenance
+
+### asdf Integration
+
+- **Tool versions**: .tool-versions file for consistent development environments
+- **Auto-installation**: Scripts to install plugins and versions automatically
+- **Plugin management**: Easy updates and maintenance
+- **Cross-machine sync**: Automatically synced across machines
 
 ## Best Practices
 
