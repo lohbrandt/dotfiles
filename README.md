@@ -4,11 +4,22 @@ This repository contains my personal dotfiles managed by [chezmoi](https://www.c
 
 ## Files managed
 
-- `.zshrc` - Zsh configuration with Oh My Zsh
+### Core Configuration
+- `.zshrc` - Main zsh configuration file
 - `.gitconfig` - Git configuration
 - `.tool-versions` - asdf version manager configuration
 - `Brewfile` - Homebrew package list
-- Setup scripts for automated installation
+
+### Modular Shell Configuration
+- `.config/shell/env.zsh` - Environment variables
+- `.config/shell/aliases.zsh` - Command aliases
+- `.config/shell/functions.zsh` - Shell functions
+
+### Setup Scripts
+- `run_once_install_homebrew.sh` - Homebrew package installation
+- `run_once_install_asdf_plugins.sh` - asdf plugin and tool installation
+- `scripts/maintenance.sh` - System maintenance
+- `scripts/update-brewfile.sh` - Brewfile management
 
 ## Setup
 
@@ -78,6 +89,12 @@ chezmoi add ~/.newfile
 **System maintenance:**
 - `sysmaint` - Run comprehensive system maintenance
 
+**Configuration editing:**
+- `zshconfig` - Edit main .zshrc file
+- `aliasconfig` - Edit aliases configuration
+- `funcconfig` - Edit functions configuration
+- `zshreload` - Reload zsh configuration
+
 ## Configuration
 
 The chezmoi configuration is in `.chezmoi.toml` and includes:
@@ -87,15 +104,22 @@ The chezmoi configuration is in `.chezmoi.toml` and includes:
 
 ## Features
 
-### Zsh Configuration
+### Modular Zsh Configuration
 
-- **Oh My Zsh**: Modern zsh framework
-- **Plugins**: git, asdf, brew, macos
-- **Theme**: robbyrussell
+- **Modular Structure**: Configuration split into logical files
+- **Environment Variables**: Centralized in `~/.config/shell/env.zsh`
+- **Aliases**: Organized in `~/.config/shell/aliases.zsh`
+- **Functions**: Collected in `~/.config/shell/functions.zsh`
+- **Oh My Zsh**: Modern zsh framework with useful plugins
+- **Theme**: robbyrussell (easily customizable)
 - **asdf integration**: Automatic version manager initialization
-- **Useful aliases**: Git shortcuts, development tools
-- **Functions**: mkcd, gcb for common tasks
 - **Local config**: Support for ~/.zshrc.local for machine-specific settings
+
+#### Modular Benefits
+- **Easy maintenance**: Each component in its own file
+- **Better organization**: Logical separation of concerns
+- **Selective editing**: Edit only what you need
+- **Reusability**: Components can be shared across setups
 
 ### Git Configuration
 
