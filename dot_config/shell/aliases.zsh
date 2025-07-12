@@ -85,6 +85,7 @@ alias ....="cd ../../.."
 alias .....="cd ../../../.."
 alias ~="cd ~"
 alias -- -="cd -"
+alias repos="cd /Volumes/dev/repositories"
 
 # -----------------------------------------------------------------------------
 # File Operations
