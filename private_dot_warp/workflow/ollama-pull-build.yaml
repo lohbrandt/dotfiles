@@ -1,0 +1,21 @@
+---
+name: Pull and Build Ollama Model
+command: |
+  ollama pull {{model_name}}
+  echo "FROM {{model_name}}" > Modelfile
+  ollama create {{custom_model_name}} -f Modelfile
+tags:
+  - ollama
+  - ai
+  - model
+description: |
+  Pulls a specified Ollama model, generates a basic Modelfile, and builds a custom model.
+arguments:
+  - name: model_name
+    description: Name of the base model to pull (e.g., llama3.2)
+    default_value: llama3.2
+  - name: custom_model_name
+    description: Name for your custom Ollama model
+    default_value: my-custom-llama3
+author: steffen lohbrandt
+shells: []
