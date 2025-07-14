@@ -150,3 +150,6 @@ export DOWNLOADS_DIR="$HOME/Downloads"
 
 # Set default documents directory
 export DOCUMENTS_DIR="$HOME/Documents"
+
+# OLLAMA Models directory
+export OLLAMA_MODELS="/Volumes/llm_models"
