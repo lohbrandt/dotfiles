@@ -1,0 +1,3 @@
+# Exclude volatile Obsidian data
+exact_dot_obsidian/cache/
+exact_dot_obsidian/plugins/**
