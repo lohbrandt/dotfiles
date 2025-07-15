@@ -37,6 +37,8 @@ chezmoi init
 
 ### Apply the dotfiles
 
+**Important:** Before running `chezmoi apply`, ensure that the external/network volume is mounted at `/Volumes/docs`. The Obsidian configuration files will be placed in `/Volumes/docs/obsidian/.obsidian/`.
+
 ```bash
 chezmoi apply
 ```
@@ -148,6 +150,13 @@ The chezmoi configuration is in `.chezmoi.toml` and includes:
 - **Gem management**: Proper gem paths and environment setup
 - **Compatibility**: Avoids compilation issues on newer macOS versions
 
+### Obsidian Configuration
+
+- **Location**: Configuration files are placed in `/Volumes/docs/obsidian/.obsidian/`
+- **External Volume**: Requires the external/network volume to be mounted at `/Volumes/docs`
+- **Conditional Setup**: If the volume is not available, the Obsidian configuration will be skipped
+- **JSON Files**: Core Obsidian settings (app.json, appearance.json, etc.) are synced across machines
+
 ## Best Practices
 
 1. **Edit files through chezmoi**: Use `chezmoi edit` instead of editing files directly
@@ -174,4 +183,24 @@ chezmoi status
 
 ```bash
 chezmoi apply --force ~/.zshrc
+```
+
+### Obsidian Configuration Issues
+
+#### Volume Not Mounted
+If the `/Volumes/docs` volume is not available, the Obsidian configuration will be automatically skipped. You can verify this by checking:
+
+```bash
+ls -la /Volumes/docs
+```
+
+If the volume is not mounted, either:
+1. Mount the external/network volume at `/Volumes/docs`
+2. Or run `chezmoi apply` anyway - the Obsidian config will be skipped
+
+#### Force Apply Obsidian Config
+If you've mounted the volume after running `chezmoi apply`, you can specifically apply the Obsidian configuration:
+
+```bash
+chezmoi apply --force /Volumes/docs/obsidian/.obsidian/
 ```

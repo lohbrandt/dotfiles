@@ -1,3 +1,8 @@
 # Exclude volatile Obsidian data
 exact_dot_obsidian/cache/
 exact_dot_obsidian/plugins/**
+
+# Conditionally exclude Obsidian configuration if /Volumes/docs is not available
+{{- if not (stat "/Volumes/docs") }}
+private_Volumes/docs/obsidian/dot_obsidian/
+{{- end }}
