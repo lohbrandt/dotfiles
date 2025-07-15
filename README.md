@@ -32,7 +32,7 @@ brew install chezmoi
 ### Initialize chezmoi with this repository
 
 ```bash
-chezmoi init
+chezmoi init git@github.com:lohbrandt/dotfiles.git
 ```
 
 ### Apply the dotfiles
@@ -42,6 +42,27 @@ chezmoi init
 ```bash
 chezmoi apply
 ```
+
+### Setup on another machine
+
+1. **Install chezmoi** (if not already installed):
+   ```bash
+   brew install chezmoi
+   ```
+
+2. **Mount the external/network volume** at `/Volumes/docs`
+
+3. **Initialize and apply**:
+   ```bash
+   chezmoi init git@github.com:lohbrandt/dotfiles.git
+   chezmoi apply
+   ```
+
+4. **Verify Obsidian configuration**:
+   ```bash
+   ls -la /Volumes/docs/obsidian/.obsidian/
+   ```
+   You should see the JSON configuration files (app.json, appearance.json, etc.)
 
 ## Daily usage
 
