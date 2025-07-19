@@ -73,3 +73,4 @@ fi
 if [[ -f ~/.zshrc.local ]]; then
     source ~/.zshrc.local
 fi
+export PATH="/opt/homebrew/opt/ruby/bin:$PATH"
