@@ -108,6 +108,43 @@ function npminit() {
     git commit -m "Initial commit"
 }
 
+# Create a Python virtual environment
+function mkvenv() {
+    if [[ $# -lt 1 ]]; then
+        echo "Usage: mkvenv <env_name> [directory]"
+        return 1
+    fi
+
+    local env_name="$1"
+    local venv_dir="${2:-./venvs/$env_name}"
+
+    # Fail if python3 is unavailable
+    if ! command -v python3 >/dev/null 2>&1; then
+        echo "python3 is not installed or not in PATH"
+        return 1
+    fi
+
+    # Prevent accidental overwrite
+    if [[ -e $venv_dir ]]; then
+        echo "Directory already exists: $venv_dir"
+        return 1
+    fi
+
+    mkdir -p "$venv_dir" 2>/dev/null || {
+        echo "Unable to create directory: $venv_dir"
+        return 1
+    }
+
+    echo "Creating virtual environment in $venv_dir ..."
+    if python3 -m venv "$venv_dir"; then
+        echo "✅ Virtual environment created: $venv_dir"
+        echo "Activate with: source $venv_dir/bin/activate"
+    else
+        echo "❌ Failed to create virtual environment"
+        return 1
+    fi
+}
+
 # Quick HTTP server
 function serve() {
     local port=${1:-8000}
